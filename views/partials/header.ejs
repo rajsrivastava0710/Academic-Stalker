@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>KNIT Academics</title>
+	      <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  	<body>
+  	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+
+      <a class="navbar-brand" href="/" id='logomark'>Academic Stalker</a>
+      <a class="navbar-brand" href="/academics" id='logomark1'>Students</a>
+    
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+         <% if(!currentUser){ %>
+            <li><a id='logup' href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a id='logup' href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <% } else { %>
+            <li><a id='no-outline' class='btn btn-outline-primary btn-lg active'><i><strong>Signed in as : <%= currentUser.username %></strong></i></a></li>
+            <li><a id='logup' href="/logout"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+         <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

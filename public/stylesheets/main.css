@@ -1,0 +1,146 @@
+body{
+	background:#f4fcff;
+}
+hr{
+	border:2px solid purple;
+}
+#front-detail{
+	color:blue;
+	font-family: cursive;
+}
+.properoutline{
+	border:2px solid black;
+}
+.back{
+	font-size: 1.4em;
+    color: #bd214c;
+    font-family: cursive;
+}
+#head-attr{
+	font-size:1.55em;
+	color:purple;
+	font-family:monospace;
+	font-weight:800;
+	/*text-decoration: underline;*/
+}
+#attribute{
+	font-size:1.3em;
+	color:red;
+	font-family:cursive;
+}
+#value{
+	font-size:1.3em;
+	color:blue;
+	font-family:cursive;
+}
+#logup{
+	font-size: 1.2em;
+    color: #c62b2b;
+}
+#radiodis{
+	margin-left: 4px;
+    font-style: oblique;
+}
+#onborder{
+	border:2px solid #515263de;
+	border-radius: 4px;
+	margin-bottom: 10px;
+    padding: 5px 10px;
+}
+#logomark{
+    padding: 15px 20px 10px 20px;
+    font-size: 30px;
+    color: #1c3444;
+    background: #d9d0ef;
+    font-weight: 600;
+    font-family: cursive;
+    font-style: oblique;
+}
+
+#logomark1{
+    background: #d9d0ef;
+    margin-left: 25px;
+    font-size: 30px;
+    color: #1c3444;
+    font-weight: 600;
+    font-family: cursive;
+    font-style: oblique;
+}
+#text-c{
+	text-align: center;
+}
+#cmnt-text{
+	margin-bottom: 2px;
+	color: #121221;
+	font-family: cursive;
+}
+#cmnt-name{
+	display: flex;
+	margin-top: 5px;
+	margin-bottom:0px;
+	color: #3391e0d9;
+	font-family: monospace;
+	font-size:1.25em;
+}
+#del-form{
+	display
+	:inline;
+}
+#frm-head{
+	text-align:center;
+	margin-bottom:20px;
+	color:#841f1fe8;
+}
+#frm-width{
+	width:60%;
+	max-width:400px;
+	margin:0 auto;
+}
+#lbl{
+	font-family: cursive;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #203661;
+}
+#no-outline{
+	background: #c7cae2;
+    font-size: 1.5em;
+    color: #391dcc;
+    border: 0px;
+    border-radius: 4px;
+}
+#no-outline:hover {
+    transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+    -moz-transform:scale(1.05);
+}
+#cg-margin{
+	margin-bottom:25px;
+}
+.img-thumbnail img{
+	width:100%;
+}
+#pic-thumb{
+	padding:0;
+	margin-bottom: 15px;
+	margin-top:19px;
+}
+
+.img-thumbnail .caption-full{ 
+	padding:10px;
+}
+#responsive-cg{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+}
+.well{
+	margin-top:5px;
+}
+hr{
+	border-top: 1px solid #4773732e;
+
+}
+.form-control{
+	border: 2px solid #515263de;
+}

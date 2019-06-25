@@ -1,0 +1,97 @@
+i{
+margin-left:4px;
+}
+
+body {
+  background-color: #000;
+}
+
+h1 {
+  font-size: 4em;
+  text-shadow: 3px 3px 3px orange;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 220px; 
+  /*or 40vh*/
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  /*background-image: url(http://i.imgur.com/K3mPv14.jpg) */
+  background-image: url(https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/52602574_2295587534053929_8373209515746656256_n.jpg?_nc_cat=104&_nc_ht=scontent-bom1-1.xx&oh=549614dba0c2ee56897e8d97ccc9f4b3&oe=5D77A1DC);
+}
+.slideshow li:nth-child(2) { 
+  /*background-image: url(http://i.imgur.com/SBEmFpv.jpg);*/
+  background-image: url(http://sultanpurjankari.in/images/clg/knit2.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  /*background-image: url(http://i.imgur.com/emvhOnb.jpg);*/
+  background-image: url(https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/53751064_2299965836949432_8164504350320754688_n.jpg?_nc_cat=104&_nc_ht=scontent-bom1-1.xx&oh=2286d6e0d9d59c34f7cf36602d944652&oe=5D72E747);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  /*background-image: url(http://i.imgur.com/2LSMCmJ.jpg);*/
+  background-image: url(https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/53283341_2299966073616075_6371275381625847808_n.jpg?_nc_cat=110&_nc_ht=scontent-bom1-1.xx&oh=904da8b6f3cc3422db82159c00511cba&oe=5D3BE0DF);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  /*background-image: url(http://i.imgur.com/TVGe0Ef.jpg);*/
+  background-image: url(https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/53321404_2299961343616548_6289638305415823360_n.jpg?_nc_cat=100&_nc_ht=scontent-bom1-1.xx&oh=701ae5a2973ab8b2991edf765e961b07&oe=5D371DED);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+/*.no-cssanimations .slideshow li {
+    opacity: 1;
+}*/

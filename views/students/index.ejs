@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class='container'>
+<!-- <header class='jumbotron' style='margin-top:50px;'> -->
+	<header class='jumbotron' style='padding-bottom: 0px;'>
+	<div class='container'>
+		<div id='text-c'>
+		<h1 style='color:#412d1f;'>Welcome to the Unofficial Academic Website</h1>
+		<p style='font-family: monospace;
+    color: #3671f3;'>Students can create their accounts and view other students's details as well.</p> 
+		<a class='btn btn-danger btn-large' href='/academics/new' style='font-size: 1.4em;font-family:cursive;color:powderblue;margin-bottom: 10px;'>Add New Entry</a>
+		<p style='font-family: monospace;
+    font-size: 1.5em;
+    color: navy;'>Total Entries Done = <%= numuser %></p>
+		</div>
+	</div>
+</header>
+
+<div class='row text-center' id='responsive-cg'>
+<% campgrounds.forEach(function(campground){ %>
+	<div class='col-md-4 col-sm-6' id='cg-margin'>
+		<div class='img-thumbnail'>
+			<img class='img-thumbnail' src="<%= campground.image %>">
+			<div id='front-detail' class='caption'>
+				<h4 style='font-size:1.9em ; color:red;'><%= campground.name %></h4>
+				<h4><%= campground.branch %></h4>
+				<h4><%= Math.round((campground.mark1+campground.mark2+campground.mark3)/60*100)/100 %> %</h4>
+			</div>
+			<p>
+				<a href='/academics/<%= campground._id %>' class='btn btn-primary' style='background:#e53434'>Check Out for More Info</a>
+			</p>
+		</div> 
+	</div> 
+<% }); %> 
+
+</div>
+</div>
+<% include ../partials/footer %>

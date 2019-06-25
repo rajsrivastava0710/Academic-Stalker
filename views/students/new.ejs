@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+<div class='container'>
+	<div class='row'>
+		<h1 id='frm-head'>Create new Student Entry</h1>
+		<div id='frm-width'>
+			<form action = "/academics" method='POST'>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder='Name' name='name'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='Number' placeholder='Roll Number'  
+				value= <%= user %> disabled>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder='Image-URL' name='image'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='email' placeholder='Enter your E-Mail ID' name='description'  required>
+			</div>
+			<div id='onborder'>
+			<label>Branch:</label>
+			<div >
+				<input  type='radio' name='branch' value='CSE' required><span id='radiodis'>CSE</span><br>
+				<input  type='radio' name='branch' value='IT'><span id='radiodis' >IT</span><br>
+				<input  type='radio' name='branch' value='ME'><span id='radiodis' >ME</span><br>
+
+			</div>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' placeholder='Mobile Number' name='mobile' size="4" title="You can enter only 10 digits..." required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' placeholder="First Year Marks (Out of 2000)" name='mark1' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' placeholder="Second Year Marks (Out of 2000)" name='mark2' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' placeholder="Third Year Marks (Out of 2000)" name='mark3' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder="Sports" name='sports' >
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder="Cultural Activity" name='cultural' >
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder="Clubs Joined" name='club'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder="Github Profile Username" name='github' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder="Facebook Profile Username" name='facebook' >
+			</div>
+
+			<div class='form-group'>
+				<textarea placeholder='Enter your bio in brief!' name='bio' cols='8' style='width:100%;height: 120px; border: 2px solid #515263de;'></textarea>
+			</div>
+			<div class='form-group'>
+				<button class='btn btn-lg btn-primary btn-block'>Submit</button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer %>

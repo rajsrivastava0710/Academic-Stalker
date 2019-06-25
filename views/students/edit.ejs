@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+<div class='container'>
+	<div class='row'>
+		<h1 id='frm-head'>Edit details for <%= campground.name %> </h1>
+		<div id='frm-width'>
+			<form action = "/academics/<%= campground._id %>?_method=PUT" method='POST'>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder='Name' name='campground[name]' value= "<%= campground.name %>" required>
+			</div>
+			<!-- <div class='form-group'>
+				<input class='form-control' type='number' placeholder='Roll No.' name='campground[roll]' value= "<%= campground.roll %>" disabled='disabled'>
+			</div> -->
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder='Image-URL' name='campground[image]' value= "<%= campground.image %>">
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='email' placeholder='Enter your Email ID' name='campground[description]' value="<%= campground.description %>" required>
+			</div>
+			
+			<div id='onborder'>
+			<label>Branch:</label>
+			<div >
+				<input  type='radio' name='campground[branch]' value='CSE' required checked><span id='radiodis'>CSE</span><br>
+				<input  type='radio' name='campground[branch]' value='IT'><span id='radiodis' >IT</span><br>
+				<input  type='radio' name='campground[branch]' value='ME'><span id='radiodis' >ME</span><br>
+
+			</div>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' title="You can enter only 10 digits..." placeholder='Mobile Number' name='campground[mobile]' value = '<%= campground.mobile %>' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' placeholder="First Year Marks (Out of 2000)" name='campground[mark1]' value= '<%= campground.mark1 %>' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' placeholder="Second Year Marks (Out of 2000)" name='campground[mark2]' value= '<%= campground.mark2 %>' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='number' placeholder="Third Year Marks (Out of 2000)" name='campground[mark3]' value= '<%= campground.mark3 %>' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder=" Sports" name='campground[sports]' value= '<%= campground.sports %>'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder=" Cultural Activity" name='campground[cultural]' value='<%=campground.cultural %>'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder=" Clubs Joined" name='campground[club]' value='<%=campground.club %>'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder=" Github Profile" name='campground[github]' value='<%=campground.github %>' required>
+			</div>
+			<div class='form-group'>
+				<input class='form-control' type='text' placeholder=" Facebook Profile" name='campground[facebook]' value='<%=campground.facebook %>'>
+			</div>
+			<div class='form-group'>
+				<textarea placeholder='Enter your bio in brief!' name='campground[bio]' cols='8' style='width:100%;height: 120px; border: 2px solid #515263de;'>'<%=campground.bio %>'</textarea>
+			</div>
+			<div class='form-group'>
+				<button class='btn btn-lg btn-primary btn-block'>UPDATE</button>
+			</div>
+			</form>
+		<!-- 	<a href='/campgrounds'>View the Student List</a> -->
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer %>

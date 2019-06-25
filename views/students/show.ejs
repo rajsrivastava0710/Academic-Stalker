@@ -1,0 +1,112 @@
+<% include ../partials/header %>
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-3'>
+			<p class='lead'>
+			<div class='list-group'>
+				<a href='/academics/<%= campground._id %>'><li class='list-group-item active'>View the Profile</li></a>
+				<a href= #det ><li class='list-group-item'>View the Details</li></a>
+				<a href= #comnt ><li class='list-group-item'>View the Comments</li></a>
+				<a href='/academics/'><li class='list-group-item'>Back to the List</li></a>
+			</div>
+		</div>
+		<div class='col-md-9'>
+			<div class='img-thumbnail properoutline' id='pic-thumb'>
+			<img class='img-responsive' src='<%= campground.image %>'>
+			<div id='det' class='caption-full'>
+				<hr>
+				<p><span id='head-attr'> Personal Information:</span></p>
+				<p><span id='attribute'>Name: </span><a><span id='value'><%= campground.name %></span></a><span class='pull-right'><span id='attribute'>Submitted By: </span><span id='value'><%= campground.username %></span></span></p>
+				<p>
+					<em>
+						<span id='attribute'>Roll No: </span><span id='value'><%= campground.username %></span>
+					</em>
+				</p>
+				<p><span id='attribute'>Branch: </span><span id='value'><%= campground.branch %></span></p>
+				<p><span id='attribute'>E-Mail ID: </span><span id='value'><%= campground.description %></span></p>
+				<p><span id='attribute'>Mobile Number: </span><span id='value'><%= campground.mobile %></span></p>
+				<hr>
+				<p><span id='head-attr'> Academic Marks:</span>
+				<p><span id='attribute'>First Year Marks: </span><span id='value'><%= campground.mark1 %>/2000</span></p>
+				<p><span id='attribute'>Second Year Marks: </span><span id='value'><%= campground.mark2 %>/2000</span></p>
+				<p><span id='attribute'>Third Year Marks: </span><span id='value'><%= campground.mark3 %>/2000</span></p>
+				<!-- <% campground.marks= campground.mark1+campground.mark2+campground.mark3 %> -->
+				<p><span id='attribute'>Total Marks: </span><span id='value'><%= campground.mark1+campground.mark2+campground.mark3%>/6000</span></p>
+				</p>
+				<p><span id='attribute'>Percentage: </span><span id='value'>
+					<%= Math.round((campground.mark1+campground.mark2+campground.mark3)/60*100)/100 %> %
+				</span></p>
+				</p>
+				<hr>
+				<p><span id='head-attr'> Co-Curricular Activities:</span>
+					<p><span id='attribute'>Sports: </span><span id='value'><%= campground.sports %></span></p>
+					<p><span id='attribute'>Cultural: </span><span id='value'><%= campground.cultural %></span></p>
+					<p><span id='attribute'>Clubs: </span><span id='value'><%= campground.club %></span></p>
+				</p>
+				<hr>
+					<span id='head-attr'>Additional Bio:</span>
+					<p><span id='value'><%= campground.bio %>''</span></p>
+				<hr>
+					<p><span id='head-attr'> Links:</span>
+				<p><a href="http://github.com/<%= campground.github %>" target='_blank'>
+					<button class="btn" style="background: #c8bebecc;   color: #000000;">
+ 					 <i class="github icon"></i>
+ 						 Github
+					</button>
+					</a>
+					<a href="http://facebook.com/<%= campground.facebook %>" target='_blank'>
+					<button class="btn btn-primary">
+ 					 <!-- <i class="facebook icon"></i> -->
+ 						 Facebook
+					</button>
+					</a>
+				</p>
+			</p>
+			<hr>
+					
+			<% if((currentUser && campground.author.id.equals(currentUser._id))||(currentUser && currentUser.username==999)) { %>
+			<a class='btn btn-primary btn-lg pull-right' href='/academics/<%= campground._id %>/edit' style='margin-bottom: 15px;'>Update</a>
+			<form id='del-form' method="POST" action='/academics/<%= campground._id %>?_method=DELETE'>
+			<button class='btn btn-danger btn-lg pull-right' style="margin-bottom: 15px;margin-right: 15px;">Delete</button>
+			</form>
+			<% } %>
+			</div>
+			</div>
+
+			<div class='well properoutline' id= 'comnt'>
+				<div class='row'>
+					<div class='col-md-12'>
+						<div class='pull-right'>
+							<a href='/academics/<%= campground._id %>/comments/new' class='btn btn-success'>Add new Comment</a>
+						</div>
+					</div>
+				</div>
+
+				<div class='row'>
+					<div class='col-md-12'>
+						<hr>
+						<% campground.comments.forEach(function(comment){ %>
+						<strong id='cmnt-name'><%= comment.username  %></strong> 
+						<span class='pull-right'><%= moment(comment.createdAt).fromNow() %></span>
+						<p id='cmnt-text'><%= comment.text %></p>
+						<% if(currentUser && (comment.author.id.equals(currentUser._id) || campground.author.id.equals(currentUser._id))){ %>
+							 <% if(comment.author.id.equals(currentUser._id)){ %>
+						<a class='btn btn-warning btn-xs'
+							href='/academics/<%= campground._id %>/comments/<%= comment._id %>/edit'>
+							Edit
+						</a>
+						<% } %>
+						<form id='del-form' method="POST" action='/academics/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE'>
+							<input type='submit' class='btn btn-danger btn-xs' value="Delete"> 
+						</form>
+						<% } %>
+
+						<% }); %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% include ../partials/footer %>
+
